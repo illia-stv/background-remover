@@ -79,7 +79,6 @@ export default function BackgroundRemover() {
   const onDropHandle = (event: any) => {
     event.preventDefault();
     const file = event.dataTransfer.files[0];
-    console.log(file);
     setSelectedFile(file);
     setOnDragOverStyle("");
     setProcessedImage(null);
