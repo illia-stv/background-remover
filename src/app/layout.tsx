@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Image from "next/image";
+import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
+// If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -53,6 +55,7 @@ export default function RootLayout({
           </a>
         </nav>
         {children}
+        <Analytics />
       </body>
     </html>
   );

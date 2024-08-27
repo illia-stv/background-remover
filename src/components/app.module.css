@@ -51,6 +51,10 @@
   box-shadow: 0px 0px 24px 0px rgba(170, 170, 170, 1);
 }
 
+.dropZone button {
+  margin-bottom: 10px;
+}
+
 /* Upload Button */
 .uploadButton {
   background-color: var(--primary-color); /* Primary Color */
