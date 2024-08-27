@@ -1,0 +1,251 @@
+/* components/ImageUploader.module.css */
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--background-color);
+  padding: 4rem 1rem 0; /* p-4 pt-10 */
+  height: calc(100vh - 60px);
+  position: relative;
+}
+
+/* Content */
+.content {
+  width: 60%; /* w-8/12 */
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Title */
+.title {
+  font-size: 3rem; /* text-5xl */
+  font-weight: bold; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+  color: var(--text-color);
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1.125rem; /* text-lg */
+  color: var(--text-color);
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+/* Highlight */
+.highlight {
+  color: var(--text-color); /* Accent Color */
+  font-weight: 900; /* font-semibold */
+}
+
+/* Drop Zone */
+.dropZone {
+  background-color: var(--background-color); /* Background Color */
+  width: 66%; /* w-8/12 */
+  margin: auto;
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 1.5rem; /* p-6 */
+  transition: 0.5s;
+  background-image: url("/transparent2.png"); /* Fixed URL */
+  box-shadow: 0px 0px 24px 0px rgba(170, 170, 170, 1);
+}
+
+/* Upload Button */
+.uploadButton {
+  background-color: var(--primary-color); /* Primary Color */
+  color: white;
+  padding: 0.5rem 0; /* py-2 */
+  border-radius: 0.5rem; /* rounded-lg */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.uploadButton label {
+  padding: 0.5rem 1rem;
+}
+
+.uploadButton:hover label {
+  color: var(--primary-color);
+}
+
+.uploadButton:hover {
+  background-color: white; /* Hover Color */
+}
+
+.uploadButton:active {
+  background-color: var(--primary-color); /* Active Color */
+}
+
+#file-input {
+  display: none;
+}
+
+/* Image Preview */
+.imagePreview {
+  background-size: contain; /* Adjusts the background image to fit within the container */
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  max-width: 500px;
+  max-height: 500px;
+  width: 100%; /* Initial width, can be adjusted with JavaScript */
+  height: 100%; /* Initial height, can be adjusted with JavaScript */
+  display: inline-block; /* Ensures the container shrinks to fit content */
+  position: relative;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 24px 0px rgba(170, 170, 170, 1);
+  -moz-box-shadow: 0px 0px 24px 0px rgba(170, 170, 170, 1);
+  box-shadow: 0px 0px 24px 0px rgba(170, 170, 170, 1);
+}
+
+/* Loader */
+.loader {
+  width: 4rem; /* w-16 */
+  height: 4rem;
+  border: 4px solid #3b82f6; /* Border Color */
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Processed Image */
+.processedImage {
+  margin-top: 2rem; /* mt-8 */
+}
+
+.uploadedImage {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+/* Download Button */
+.downloadButton {
+  background-color: var(--background-color); /* Background Color */
+  padding: 0.5rem 0;
+  border-radius: 0.5rem; /* rounded-lg */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.downloadButton a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+}
+
+.downloadButton:hover {
+  background-color: var(--text-color);
+}
+.downloadButton:hover a {
+  color: var(--background-color);
+}
+
+.downloadButton:active {
+  color: var(--background-color);
+  background-color: var(
+    --accent-color
+  ); /* Active Color - darker shade of the primary color */
+}
+
+.buttonsGroup {
+  display: flex;
+  width: 40%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.processedImage {
+  max-width: 500px;
+  max-height: 500px;
+  margin: 0 auto 1.5rem;
+  background-image: url("/transparent.png"); /* Fixed URL */
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 24px 0px rgba(170, 170, 170, 1);
+  -moz-box-shadow: 0px 0px 24px 0px rgba(170, 170, 170, 1);
+  box-shadow: 0px 0px 24px 0px rgba(170, 170, 170, 1);
+}
+
+.borderCollieImage {
+  position: absolute;
+  top: 170px;
+  left: 10%;
+  border: 3px dashed #aaa;
+  transform: rotate(-10deg);
+  box-shadow: 0px 0px 24px 0px rgba(170, 170, 170, 1);
+}
+
+.buldogImage {
+  position: absolute;
+  top: 200px;
+  right: 10%;
+  border: 3px dashed #aaa;
+  transform: rotate(10deg);
+  box-shadow: 0px 0px 24px 0px rgba(170, 170, 170, 1);
+}
+
+.notSupported {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .borderCollieImage {
+    left: 5%;
+  }
+
+  .buldogImage {
+    right: 5%;
+  }
+}
+
+@media (max-width: 1050px) {
+  .borderCollieImage {
+    display: none;
+  }
+
+  .buldogImage {
+    display: none;
+  }
+
+  .content {
+    width: 80%;
+  }
+
+  .buttonsGroup {
+    width: 60%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  /* Subtitle */
+  .subtitle {
+    font-size: 0.95rem; /* text-lg */
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    display: none;
+  }
+
+  .notSupported {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+  }
+}

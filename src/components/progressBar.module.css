@@ -1,0 +1,41 @@
+/* components/ProgressBar.module.css */
+
+/* Container */
+.progressContainer {
+  width: 60%;
+  margin: 2rem auto 0;
+  background-color: #e5e7eb; /* Light Gray */
+  border-radius: 0.5rem; /* Rounded edges */
+  overflow: hidden;
+  height: 1.5rem; /* Height of the progress bar */
+  position: relative;
+}
+
+/* Progress Bar */
+.progressBar {
+  height: 100%;
+  background-color: #3b82f6; /* Sky Blue */
+  transition: width 0.4s ease;
+}
+
+/* Progress Text */
+.progressText {
+  margin-left: 10px;
+  color: #4a5568; /* Dark Gray */
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+.messages {
+  width: 60%;
+  margin: 1rem auto 0;
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 20px;
+}
+
+.messages p {
+  text-align: center;
+}
