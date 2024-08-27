@@ -18,7 +18,7 @@ const ImageProcesssing = ({ imageSrc, imageDimensions }: any) => {
       <div className={styles.waitingMessage}>
         <p>
           <strong>Info:</strong> removing background could take up to few
-          minutes. Please don't be discouraged.
+          minutes. Please don&apos;t be discouraged.
         </p>
       </div>
     </div>
