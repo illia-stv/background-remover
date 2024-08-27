@@ -37,7 +37,10 @@ export default function RootLayout({
               borderRadius: "0 5px 5px 0",
             }}
           />{" "}
-          <a href="https://github.com" target="_blank">
+          <a
+            href="https://github.com/illia-stv/background-remover"
+            target="_blank"
+          >
             <Image
               src="/github-icon.svg"
               alt="github icon"
