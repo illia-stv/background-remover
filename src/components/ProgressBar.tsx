@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "./ProgressBar.module.css";
+import styles from "./progressBar.module.css";
 
 const messages = [
   "Fetching AI model🤖",
