@@ -15,6 +15,12 @@ const ImageProcesssing = ({ imageSrc, imageDimensions }: any) => {
         <div className={styles.loader}></div>
       </div>
       <ProgressBar />
+      <div className={styles.waitingMessage}>
+        <p>
+          <strong>Info:</strong> removing background could take up to few
+          minutes. Please don't be discouraged.
+        </p>
+      </div>
     </div>
   );
 };

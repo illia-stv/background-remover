@@ -32,7 +32,7 @@ export default function BackgroundRemover() {
   const handleFileChange = (event: any) => {
     const file = event.target.files[0];
     setSelectedFile(file);
-    handleBackgroundRemoval();
+    setProcessedImage(null);
 
     if (file && file.type.startsWith("image/")) {
       const reader = new FileReader();
@@ -46,15 +46,12 @@ export default function BackgroundRemover() {
   };
 
   useEffect(() => {
-    preload({
-      output: {
-        quality: 1,
-      },
-    });
+    preload();
   }, []);
 
   useEffect(() => {
     if (selectedFile) {
+      // setLastProcessedFile(selectedFile);
       handleBackgroundRemoval();
     }
   }, [selectedFile]);
@@ -64,6 +61,7 @@ export default function BackgroundRemover() {
 
     try {
       const result = await removeBackground(selectedFile, {
+        device: "gpu",
         output: {
           quality: 1,
         },
@@ -77,11 +75,14 @@ export default function BackgroundRemover() {
   };
 
   const onDropHandle = (event: any) => {
+    setProcessedImage(null);
+
     event.preventDefault();
+
     const file = event.dataTransfer.files[0];
+
     setSelectedFile(file);
     setOnDragOverStyle("");
-    setProcessedImage(null);
 
     if (file && file.type.startsWith("image/")) {
       const reader = new FileReader();
