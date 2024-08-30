@@ -34,15 +34,7 @@ const ProcessedImage = ({
         />
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          width: "40%",
-          margin: "0 auto",
-          justifyContent: "space-between",
-        }}
-        className={styles.buttonsGroup}
-      >
+      <div className={styles.buttonsGroup}>
         <DownloadButton processedImage={processedImage} />
         <UploadButton handleFileChange={handleFileChange} />
       </div>

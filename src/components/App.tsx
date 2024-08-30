@@ -28,6 +28,8 @@ export default function BackgroundRemover() {
     maxWidth: 200,
     maxHeight: 200,
   });
+  const { width: viewportWidth, height: viewportHeight } =
+    getWindowDimensions();
 
   const handleFileChange = (event: any) => {
     const file = event.target.files[0];
@@ -114,12 +116,14 @@ export default function BackgroundRemover() {
       img.onload = function () {
         let width = img.naturalWidth;
         let height = img.naturalHeight;
+        const maxWidth = viewportWidth > 550 ? 500 : viewportWidth - 50;
+        const maxHeight = viewportHeight > 550 ? 500 : viewportHeight - 50;
 
         const { width: updatedWidth, height: updatedHeight } = getDimensions({
           width,
           height,
-          maxWidth: 500,
-          maxHeight: 500,
+          maxWidth,
+          maxHeight,
         });
 
         // Set the container's dimensions based on the image's natural dimensions
@@ -180,9 +184,6 @@ export default function BackgroundRemover() {
           />
         )}
       </div>
-      <div className={styles.notSupported}>
-        <h1>Not supported for the phone devices yet.</h1>
-      </div>
     </div>
   );
 }
@@ -197,6 +198,21 @@ const getDimensions = ({ width, height, maxHeight, maxWidth }: any) => {
     height = height * ratio;
   }
 
+  return {
+    width,
+    height,
+  };
+};
+
+const getWindowDimensions = () => {
+  if (typeof window !== "object") {
+    return {
+      width: 1000,
+      height: 1000,
+    };
+  }
+
+  const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
     height,

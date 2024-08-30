@@ -212,10 +212,6 @@
   box-shadow: 0px 0px 24px 0px rgba(170, 170, 170, 1);
 }
 
-.notSupported {
-  display: none;
-}
-
 @media (max-width: 1200px) {
   .borderCollieImage {
     left: 5%;
@@ -255,12 +251,9 @@
 
 @media (max-width: 600px) {
   .content {
-    display: none;
+    width: 95%;
   }
-
-  .notSupported {
-    display: block;
-    text-align: center;
-    font-size: 1rem;
+  .buttonsGroup {
+    width: 90%;
   }
 }
